@@ -8,6 +8,17 @@
     box-sizing: border-box;
 }
 
+
+
+.header{
+    text-align: center;
+    background-color: #4444c4;
+    font-family:  'Roboto', sans-serif;
+    color: aliceblue;
+    padding: 2em 2em;
+}
+
+/*
 body{
     font-family: 'Roboto', sans-serif;
     background-color: #e5e5f7;
@@ -115,3 +126,6 @@ body{
         font-size:1.8rem;
     }           
 }
+
+
+*/
