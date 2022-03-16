@@ -20,7 +20,7 @@
             ?>
 
 
-            <div>
+            <div class="container">
                 <H>Evaluation</H>
                 <p>TODO evaluer la consomation des appareils vs facture</p>
             </div>

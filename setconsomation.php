@@ -22,7 +22,7 @@
             ?>
 
 
-            <div>
+            <div class="container">
                 
                 <p>TODO ajouter la facture</p>
                

@@ -23,7 +23,7 @@
             ?>
 
 
-            <div>
+            <div class="container">
                 <p>Bienvenue</p>
                 <h>Mode de Calcul de la Consommation électrique</h>
                         <form action = "form_index">                                                       
