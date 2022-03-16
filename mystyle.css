@@ -40,6 +40,7 @@
 .container{
     background: #81d1e6;
     padding: 2em .6em;
+    min-height: calc(74vh - 50px);
 }
 
 .footer{
@@ -47,6 +48,18 @@
     background: #3866f2;
     color:#fff;
     padding: .4em .6em;
+    height: 50px;
+}
+
+h1{
+    font-family:  'Roboto', sans-serif;
+    font-size: 1.3rem;
+    padding: .4em .6em;
+}
+
+.paragraphe{
+    padding: .4em .6em;
+    font-style: italic;
 }
 /*
 body{
@@ -59,7 +72,7 @@ body{
     min-height: 100vh;
     
 }
-
+*/
 .form{
     background-color: #fff;
     margin:auto;
@@ -158,4 +171,3 @@ body{
 }
 
 
-*/

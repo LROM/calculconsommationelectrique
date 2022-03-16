@@ -22,9 +22,9 @@
 
 
     <div class="container">
-    <h1>Sign up</h1>
+    
       <form class="form">
-                      
+      <h1>Sign up</h1>
                       <!--<p class "form_paragraph"> New user <a href="#" class="form_link">Sign up</a></p>-->
                   
                   <div class="form_container">

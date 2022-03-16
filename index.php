@@ -25,7 +25,10 @@
 
             <div class="container">
                 <h1>Accueil</h1>
-                <h>Mode de Calcul de la Consommation électrique</h>
+
+                <p class=paragraphe>
+                    Dans cette application vous trouverez un calcul rapide de la consommation énergetique pour une maison
+                </p>
                         <form action = "form_index">                                                       
                                     <br>
                                     <span class="details">Consommation électrique = KiloWattsheure *periode</span>

@@ -23,9 +23,9 @@
             ?>
     
     <div class="container">
-    <h1>Login</h1>
+    
         <form class="form">
-                      
+        <h1>Login</h1>   
                      <!-- <p class "form_paragraph"> New user <a href="#" class="form_link">Register</a></p>-->                  
                   <div class="form_container">
                       <!--<div class="form_group">
