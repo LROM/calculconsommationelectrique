@@ -1,3 +1,3 @@
-<div>
-    <h6><p>Fait par Liliana</p></h6>
+<div class="footer">
+    <p>Fait par Liliana - Gestion de projet</p>
 </div>

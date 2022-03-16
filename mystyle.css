@@ -41,6 +41,13 @@
     background: #81d1e6;
     padding: 2em .6em;
 }
+
+.footer{
+    font-size: small;
+    background: #3866f2;
+    color:#fff;
+    padding: .4em .6em;
+}
 /*
 body{
     font-family: 'Roboto', sans-serif;

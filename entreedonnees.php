@@ -21,7 +21,7 @@
             require_once 'section/menu.php';
             ?>            
             <div class="container">
-                    <div class="title">Registre de Consommation</div>
+                    <h1>Entree de donnees</h1>
                     <br><br>
                         <form action = "form_reg_1">
                             <div class ="appareils-details">
