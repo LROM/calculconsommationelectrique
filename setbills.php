@@ -20,7 +20,7 @@
             <?php
             require_once 'section/menu.php';
             ?>            
-                <div class="container">
+            <div class="container">
                     <div class="title">Registre de Consommation</div>
                     <br><br>
                         <form action = "form_reg_1">

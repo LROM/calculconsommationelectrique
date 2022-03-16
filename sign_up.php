@@ -21,7 +21,7 @@
             ?>
 
 
-    
+    <div class="container">
       <form class="form">
                       <h2 class"form_title">Sign up</h2>
                       <!--<p class "form_paragraph"> New user <a href="#" class="form_link">Sign up</a></p>-->
@@ -58,7 +58,8 @@
                   </div> 
                     <!--<p class "form_paragraph"> New user <a href="#" class="form_link">Sign up</a></p>-->   
                                   
-      </form>
+        </form>
+    </div>
 
   <?php
   require_once 'section/footer.php';
