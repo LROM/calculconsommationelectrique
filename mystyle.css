@@ -21,6 +21,7 @@
 .menu{
     text-align: center;
     padding: 0.5em 0.5em;
+    background: #81d1e6;
 }
 
 .menu_option{
@@ -38,6 +39,7 @@
 
 .container{
     background: #81d1e6;
+    padding: 2em .6em;
 }
 /*
 body{
