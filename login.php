@@ -22,7 +22,7 @@
             require_once 'section/menu.php';
             ?>
     
-    <div class="container"></div>
+    <div class="container">
         <form class="form">
                       <h2 class"form_title">Login</h2>
                      <!-- <p class "form_paragraph"> New user <a href="#" class="form_link">Register</a></p>-->                  
