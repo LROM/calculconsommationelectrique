@@ -23,33 +23,38 @@
 
     <div class="container">
     
-      <form class="form">
+      <form class="form" action="/acceuil.php" method="post">
       <h1>Sign up</h1>
                       <!--<p class "form_paragraph"> New user <a href="#" class="form_link">Sign up</a></p>-->
                   
                   <div class="form_container">
                       <div class="form_group">
-                          <input type="text" id="name" class="form_input" placeholder=" ">
+                          <input type="text" id="name" name="name" class="form_input" placeholder=" ">
                           <label for="name" class="form_label">Name:</label>
                           <span class="form_line"></span>
                       </div>
                       <div class="form_group">
-                          <input type="text" id="lastname" class="form_input" placeholder=" ">
+                          <input type="text" id="lastname" name="lastname" class="form_input" placeholder=" ">
                           <label for="name" class="form_label">Lastname:</label>
                           <span class="form_line"></span>
                       </div>
                       <div class="form_group">
-                          <input type="text" id="user" class="form_input" placeholder=" ">
+                          <input type="text" id="user"  name="user" class="form_input" placeholder=" ">
                           <label for="name" class="form_label">User:</label>
                           <span class="form_line"></span>
                       </div>
                       <div class="form_group">
-                          <input type="text" id="password" class="form_input" placeholder=" ">
+                          <input type="text" id="courriel" name="courriel" class="form_input" placeholder=" ">
+                          <label for="name" class="form_label">Email:</label>
+                          <span class="form_line"></span>
+                      </div>
+                      <div class="form_group">
+                          <input type="text" id="password" name="password"  class="form_input" placeholder=" ">
                           <label for="name" class="form_label">Password:</label>
                           <span class="form_line"></span>
                       </div>
                       <div class="form_group">
-                          <input type="text" id="password" class="form_input" placeholder=" ">
+                          <input type="text" id="password2" name="password2" class="form_input" placeholder=" ">
                           <label for="name" class="form_label">Repeat password:</label>
                           <span class="form_line"></span>
                       </div>
