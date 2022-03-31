@@ -22,35 +22,22 @@
             require_once 'section/menu.php';
             ?>
 
-            <?php
-                require_once 'db/utilisateur_api.php';
-                $utilisateur = insertUtilisateur();
-                echo $utilisateur->getId();
-                echo $utilisateur->getUsername();
-                echo $utilisateur->getCourriel();
-                echo $utilisateur->getPassword();
-            ?>
-
 
             <div class="container">
-                <h1>Accueil</h1>
+                <?php
+                    require_once 'db/utilisateur_api.php';
+                    $utilisateur = insertUtilisateur();
+                ?>
 
-                <p class=paragraphe>
-                    Dans cette application vous trouverez un calcul rapide de la consommation énergetique pour une maison
-                </p>
-                        <form action = "form_index">                                                       
-                                    <br>
-                                    <span class="details">Consommation électrique = KiloWattsheure *periode</span>
-                                                                                                                          
-                                    <br><br>
-                                    <span class="details">kWh/année</span><br><br>
-                                    <span class="details">kWh/mois</span><br><br>
-                                    <span class="details">kWh/semaine</span><br><br>
-                                    <span class="details">kWh/jour</span><br><br>
+                <h1>Accueil: Bienvenue <?php echo $utilisateur->getUsername() ?></h1>
 
-                                    <span class="details">Coût de l'électricité= KiloWattsheure-periode * Tarif d'électricité</span>                                                                                                  
-                        </form>
-                
+                <?php
+                    echo "<p>user id: ".$utilisateur->getId()."</p>"; 
+                    echo "<p>username: ".$utilisateur->getUsername()."</p>";
+                    echo "<P>courriel: ".$utilisateur->getCourriel()."</p>";
+                    echo "<p>password: ".$utilisateur->getPassword()."</p>";
+                ?>
+
             </div>
 
             <?php

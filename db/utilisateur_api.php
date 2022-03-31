@@ -33,7 +33,7 @@ function insertUtilisateur(): ?Utilisateur
     $utilisateur = new Utilisateur($name, $courriel, $password );
     $utilisateur_id = $utilisateurRepository->insert($utilisateur);
     $utilisateur->setId($utilisateur_id);
-    echo $utilisateur_id;
+    //echo $utilisateur_id;
     }
 
     return $utilisateur;
