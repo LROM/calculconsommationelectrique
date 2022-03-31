@@ -19,12 +19,12 @@
             ?>
 
             <?php
-            require_once 'section/menu.php';
+            require_once 'section/menu-no-logged.php';
             ?>
     
     <div class="container">
     
-        <form class="form">
+        <form class="form" action="/account.php" method="post">
         <h1>Login</h1>   
                      <!-- <p class "form_paragraph"> New user <a href="#" class="form_link">Register</a></p>-->                  
                   <div class="form_container">

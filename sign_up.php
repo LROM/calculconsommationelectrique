@@ -17,13 +17,13 @@
             ?>
 
             <?php
-            require_once 'section/menu.php';
+            require_once 'section/menu-no-logged.php';
             ?>
 
 
     <div class="container">
     
-      <form class="form" action="/acceuil.php" method="post">
+      <form class="form" action="/login.php" method="post">
       <h1>Sign up</h1>
                       <!--<p class "form_paragraph"> New user <a href="#" class="form_link">Sign up</a></p>-->
                   

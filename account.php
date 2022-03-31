@@ -19,8 +19,8 @@
             ?>
 
             <?php
-            require_once 'section/menu.php';
-            ?>
+            require_once 'section/menu-logged.php';
+            ?>  
 
 
             <div class="container">

@@ -19,7 +19,7 @@
             ?>
 
             <?php
-            require_once 'section/menu.php';
+            require_once 'section/menu-no-logged.php';
             ?>
 
 
