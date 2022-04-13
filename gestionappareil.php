@@ -30,10 +30,6 @@ $appareilRepo = new AppareilRepository($config);
     ?>
 
     <?php
-    require_once 'section/retroaction.php';
-    ?>
-
-    <?php
     $erreurs = array();
     $info = "";
 
@@ -120,10 +116,14 @@ $appareilRepo = new AppareilRepository($config);
     }
     ?>
 
+    <?php
+    require_once 'section/retroaction.php';
+    ?>
+
     <div class="sautligne">
-    <h1>Registre des appareils</h1>
+        <h1>Registre des appareils</h1>
         <table>
-        
+
 
             <tr>
                 <th>Appareil</th>
@@ -141,13 +141,13 @@ $appareilRepo = new AppareilRepository($config);
                     <td><?= $appareil->getName() ?></td>
                     <td><?= $appareil->getKilowattsHeure() ?></td>
                     <td>
-                        <form  name="modifierAppareil" action="gestionappareil.php" method="post">
+                        <form name="modifierAppareil" action="gestionappareil.php" method="post">
                             <input type="hidden" name="id" value="<?= $appareil->getId() ?>">
                             <input class="c_bouton" type="submit" name="boutonDemandeModification" value="Modifier">
                         </form>
                     </td>
                     <td>
-                        <form  name="supprimerAppareil" action="gestionappareil.php" method="post">
+                        <form name="supprimerAppareil" action="gestionappareil.php" method="post">
                             <input type="hidden" name="id" value="<?= $appareil->getId() ?>">
                             <input class="c_bouton" type="submit" name="boutonSupprimer" value="Supprimer">
                         </form>
@@ -165,7 +165,7 @@ $appareilRepo = new AppareilRepository($config);
             if (isset($appareilAModifier))
             {
             ?>
-                <form  class="form" name="modifierAppareil" action="gestionappareil.php" method="post">
+                <form class="form" name="modifierAppareil" action="gestionappareil.php" method="post">
                     <h1>Modification d'un appareil</h1>
                     <label>Appareil à modifier : <input type="text" name="nameAppareil" value="<?= $nameAppareil ?>"></label>
                     <br><br>
@@ -181,9 +181,9 @@ $appareilRepo = new AppareilRepository($config);
             {
             ?>
 
-                
+
                 <br><br>
-                <form class="form"  name="ajouterAppareil" action="gestionappareil.php" method="post">
+                <form class="form" name="ajouterAppareil" action="gestionappareil.php" method="post">
                     <h1>Ajout d'un nouveau appareil</h1>
                     <label>Nom d'appareil : <input type="text" name="nameAppareil" value="<?= $nameAppareil ?>"> </label>
                     <br><br>
