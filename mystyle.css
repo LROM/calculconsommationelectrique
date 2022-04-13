@@ -159,6 +159,7 @@ body{
     transition: transform .4s;
 
 }
+
 .form_input:focus ~ .form_line, form_input.form_input:not(:placeholder-shown)~ .form_line{
     transform: scale(1);
 }
@@ -171,3 +172,51 @@ body{
 }
 
 
+
+table, th, td{
+    border: 1px solid black;
+    border-collapse:collapse;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    
+}
+th, td{
+    padding: 5px;
+}
+
+td{
+    text-align: center;
+}
+
+.sautligne{
+    display: block;
+    padding:4px 2px;
+    margin:2px 0 20px 10px;
+}
+
+.c_bouton{
+    background: #3866f2;
+    color:#fff;
+    font-family:'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    font-style: italic;
+    padding: .4em .6em;
+    border: none;
+    border-radius: .5em;
+    text-decoration: none;    
+}
+
+/*
+input[type=submit] {
+    padding:5px 15px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+*/
