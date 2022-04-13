@@ -32,8 +32,6 @@ class AppareilRepository extends ModelRepository
         {
             $appareil = new Appareil($record['name'], $record['kilowatts_heure'],  $record['id']);
         }
-        return $appareil;
-        //$appareil = $this->constructAppareilFromRecord($record);
 
         return $appareil;
     }
