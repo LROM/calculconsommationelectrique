@@ -33,6 +33,27 @@ class UtilisateurRepository extends ModelRepository
         return $utilisateur;
     }
 
+        /**
+     * @param string $id L'identifant unique de l'utilisateur à sélectionner.
+     * @return Utilisateur L'utilisateur si trouvé, sinon null.
+     */
+    public function selectPassword($username): string
+    {
+        $password = "";
+        $requete = $this->connexion->prepare("SELECT * FROM utilisateur WHERE username=:username");
+        $requete->bindValue(":username", $username);
+        $requete->execute();
+
+        $utilisateur = null;
+        if ($record = $requete->fetch())
+        {
+            $utilisateur = $this->constructUtilisateurFromRecord($record);
+            $password = $utilisateur->getPassword();
+        }
+
+        return $password;
+    }
+
     /**
      * @param Tag $tag Le tag à insérer en BD. Un nouvel id sera affecté à l'objet.
      * @return int Le nouvel id du tag. 0 si l'insertion ne se produit pas. 
