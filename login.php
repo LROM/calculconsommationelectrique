@@ -2,7 +2,7 @@
 session_start();
 require_once 'config.php';
 $utilisateurRepo = new UtilisateurRepository($config);
-session_destroy(); 
+session_destroy();
 ?>
 
 <!DOCTYPE html>
@@ -22,20 +22,10 @@ session_destroy();
 </head>
 
 <body>
-
     <?php
-    require_once 'section/header.php';
-    ?>
+    $erreurs = array();
+    $info = "";
 
-    <?php
-    require_once 'section/menu-no-logged.php';
-    ?>
-
-
-    <?php
-        $erreurs = array();
-        $info = "";
-    
     if (!empty($_POST))
     {
         if (isset($_POST['button_login']))
@@ -44,7 +34,7 @@ session_destroy();
             $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 
-            if (isset($username) && isset($password) )
+            if (isset($username) && isset($password))
             {
                 $password_db = $utilisateurRepo->selectPassword($username);
                 if ($password_db != $password)
@@ -56,46 +46,59 @@ session_destroy();
                     session_start();
                     $_SESSION["username"] = $username;
                     header("Location: account.php");
- 
                 }
             }
-
         }
     }
     ?>
-    
-
-
-    <div class="container">
-
-        <form class="form" action="login.php" method="post">
-            <h1>Login</h1>
-
-            <div class="form_container">
-
-                <div class="form_group">
-                    <input type="text" name="username" id="user" class="form_input" placeholder=" ">
-                    <label for="name" class="form_label">User:</label>
-                    <span class="form_line"></span>
-                </div>
-
-                <div class="form_group">
-                    <input type="text" name="password" id="password" class="form_input" placeholder=" ">
-                    <label for="name" class="form_label">Password:</label>
-                    <span class="form_line"></span>
-                </div>
-
-                <input type="submit" class="form_submit" name="button_login" value="Submit">
-
-            </div> <br>
-            <p class="form_paragraph"> New user <a href="sign_up.php" class="form_link">Sign up</a></p>
-
-        </form>
-    </div>
 
     <?php
-     //require_once 'section/retroaction.php';
+    require_once 'section/header.php';
     ?>
+
+    <div class="container">
+        <?php
+        require_once 'section/menu-no-logged.php';
+        ?>
+
+        <div class="panel">
+            <div class="panel-title">
+
+            </div>
+
+            <div class="panel-body">
+
+                <form class="form" action="login.php" method="post">
+                    <h1>Login</h1>
+
+                    <div class="form_container">
+
+                        <div class="form_group">
+                            <input type="text" name="username" id="user" class="form_input" placeholder=" ">
+                            <label for="name" class="form_label">User:</label>
+                            <span class="form_line"></span>
+                        </div>
+
+                        <div class="form_group">
+                            <input type="text" name="password" id="password" class="form_input" placeholder=" ">
+                            <label for="name" class="form_label">Password:</label>
+                            <span class="form_line"></span>
+                        </div>
+
+                        <input type="submit" class="form_submit" name="button_login" value="Submit">
+
+                    </div> <br>
+                    <p class="form_paragraph"> New user <a href="sign_up.php" class="form_link">Sign up</a></p>
+
+                </form>
+
+
+                <?php
+                require_once 'section/retroaction.php';
+                ?>
+            </div>
+        </div>
+    </div>
     <?php
     require_once 'section/footer.php';
     ?>

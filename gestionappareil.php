@@ -25,9 +25,7 @@ $appareilRepo = new AppareilRepository($config);
     require_once 'section/header.php';
     ?>
 
-    <?php
-    require_once 'section/menu-logged.php';
-    ?>
+
 
     <?php
     $erreurs = array();
@@ -116,97 +114,103 @@ $appareilRepo = new AppareilRepository($config);
     }
     ?>
 
-    <?php
-    require_once 'section/retroaction.php';
-    ?>
 
-    <div class="sautligne">
-        <h1>Registre des appareils</h1>
-        <table>
+    <div class="container">
+
+        <?php
+        require_once 'section/menu-logged.php';
+        ?>
+
+        <div class="panel">
+
+            <div class="panel-title">
+                <h1>Registre des appareils</h1>
+            </div>
+
+            <div class="panel-body">
+                <table>
 
 
-            <tr>
-                <th>Appareil</th>
-                <th>KWH</th>
-                <th></th>
-                <th></th>
-            </tr>
-            <?php
-            $appareils = $appareilRepo->selectAll();
-            foreach ($appareils as $appareil)
-            {
-            ?>
+                    <tr>
+                        <th>Appareil</th>
+                        <th class="td-center">KWH</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <?php
+                    $appareils = $appareilRepo->selectAll();
+                    foreach ($appareils as $appareil)
+                    {
+                    ?>
 
-                <tr>
-                    <td><?= $appareil->getName() ?></td>
-                    <td><?= $appareil->getKilowattsHeure() ?></td>
-                    <td>
-                        <form name="modifierAppareil" action="gestionappareil.php" method="post">
-                            <input type="hidden" name="id" value="<?= $appareil->getId() ?>">
-                            <input class="c_bouton" type="submit" name="boutonDemandeModification" value="Modifier">
+                        <tr>
+                            <td><?= $appareil->getName() ?></td>
+                            <td class="td-center"><?= $appareil->getKilowattsHeure() ?></td>
+                            <td class="td-center">
+                                <form name="modifierAppareil" action="gestionappareil.php" method="post">
+                                    <input type="hidden" name="id" value="<?= $appareil->getId() ?>">
+                                    <input type="submit" name="boutonDemandeModification" value="Modifier">
+                                </form>
+                            </td>
+                            <td class="td-center">
+                                <form name="supprimerAppareil" action="gestionappareil.php" method="post">
+                                    <input type="hidden" name="id" value="<?= $appareil->getId() ?>">
+                                    <input type="submit" name="boutonSupprimer" value="Supprimer">
+                                </form>
+                            </td>
+                        </tr>
+
+                    <?php
+                    }
+                    ?>
+
+                </table>
+
+                <?php
+                require_once 'section/retroaction.php';
+                ?>
+
+                <div class="sautligne">
+                    <?php
+                    if (isset($appareilAModifier))
+                    {
+                    ?>
+                        <form  name="modifierAppareil" action="gestionappareil.php" method="post">
+                            <h1>Modification d'un appareil</h1>
+                            <label>Appareil à modifier : <input type="text" name="nameAppareil" value="<?= $nameAppareil ?>"></label>
+                            <br>
+                            <label>KiloWattsheure à modifier : <input type="text" name="kilowattsheure" value="<?= $kilowatts_heure ?>"></label>
+                            <br>
+                            <input type="hidden" name="id" value="<?= $appareilAModifier->getId() ?>">
+                            <input type="submit" name="boutonModifier" value="Modifier">
+                            <input type="submit" name="boutonAnnuler" value="Annuler">
                         </form>
-                    </td>
-                    <td>
-                        <form name="supprimerAppareil" action="gestionappareil.php" method="post">
-                            <input type="hidden" name="id" value="<?= $appareil->getId() ?>">
-                            <input class="c_bouton" type="submit" name="boutonSupprimer" value="Supprimer">
+                    <?php
+                    }
+                    else
+                    {
+                    ?>
+
+                        <form name="ajouterAppareil" action="gestionappareil.php" method="post">
+                            <h1>Ajout d'un nouveau appareil</h1>
+                            <label>Nom d'appareil : <input type="text" name="nameAppareil" value="<?= $nameAppareil ?>"> </label>
+                            <br>
+                            <label>KiloWattsheure: <input type="text" name="kilowattsheure" value="<?= $kilowatts_heure ?>"> </label>
+                            <br>
+                            <input type="submit" name="boutonajouterappareil" value="Ajouter">
+
                         </form>
-                    </td>
-                </tr>
-
-            <?php
-            }
-            ?>
-
-        </table>
-
-        <div class="sautligne">
-            <?php
-            if (isset($appareilAModifier))
-            {
-            ?>
-                <form class="form" name="modifierAppareil" action="gestionappareil.php" method="post">
-                    <h1>Modification d'un appareil</h1>
-                    <label>Appareil à modifier : <input type="text" name="nameAppareil" value="<?= $nameAppareil ?>"></label>
-                    <br><br>
-                    <label>KiloWattsheure à modifier : <input type="text" name="kilowattsheure" value="<?= $kilowatts_heure ?>"></label>
-                    <br><br>
-                    <input type="hidden" name="id" value="<?= $appareilAModifier->getId() ?>">
-                    <input type="submit" name="boutonModifier" value="Modifier">
-                    <input type="submit" name="boutonAnnuler" value="Annuler">
-                </form>
-            <?php
-            }
-            else
-            {
-            ?>
-
-
-                <br><br>
-                <form class="form" name="ajouterAppareil" action="gestionappareil.php" method="post">
-                    <h1>Ajout d'un nouveau appareil</h1>
-                    <label>Nom d'appareil : <input type="text" name="nameAppareil" value="<?= $nameAppareil ?>"> </label>
-                    <br><br>
-                    <label>KiloWattsheure: <input type="text" name="kilowattsheure" value="<?= $kilowatts_heure ?>"> </label>
-                    <br><br>
-                    <input type="submit" name="boutonajouterappareil" value="Ajouter">
-
-                </form>
-            <?php
-            }
-            ?>
+                    <?php
+                    }
+                    ?>
+                </div>
+            </div>
         </div>
 
     </div>
-
-
-
-
-
     <?php
     require_once 'section/footer.php';
     ?>
-
 </body>
 
 </html>
