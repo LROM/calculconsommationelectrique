@@ -35,7 +35,7 @@ $maisonRepo = new MaisonRepository($config);
 
         <div class="panel">
             <div class="panel-title">
-                <h1>accueil</h1>
+                <h1>Accueil</h1>
             </div>
 
             <div class="panel-body">

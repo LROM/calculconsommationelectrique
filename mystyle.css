@@ -286,3 +286,11 @@ table {
 .td-center{
     text-align: center;
 }
+
+
+.utilisateur{
+    color:#3866f2;
+    font-style: italic;
+    font-weight: bold;
+
+}

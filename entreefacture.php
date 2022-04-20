@@ -21,19 +21,22 @@ session_start();
             require_once 'section/header.php';
             ?>
             
-            <?php
-            require_once 'section/menu-logged.php';
-            ?>
 
 
             <div class="container">
+            <?php
+            require_once 'section/menu-logged.php';
+            ?>
+            <div class="panel">
+            <div class="panel-title">
                 
                 <h1>Entree de facture</h1>
-               
-                
-
+            </div>
+            <div class="panel-body">
             </div>
 
+            </div>
+            </div>
             <?php
             require_once 'section/footer.php';
             ?>
