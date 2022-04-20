@@ -8,6 +8,7 @@
     <a class = "menu_option" href="index.php">logout</a>
 -->
 
+    <p>Utilisateur: <?= $_SESSION["username"] ?> </p>
     <ul>
       <li><a class = "menu_option" href="account.php">Account</a></li>
       <li><a class = "menu_option" href="entreedonnees.php">Entree de donnees</a></li>

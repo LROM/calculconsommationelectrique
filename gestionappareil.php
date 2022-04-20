@@ -1,8 +1,9 @@
 <?php
+session_start();
 require_once 'config.php';
 $appareilRepo = new AppareilRepository($config);
-
 ?>
+
 
 <!DOCTYPE html>
 <html>
