@@ -1,4 +1,4 @@
-<div class="sautligne">
+<div class="sautligne"> 
     <?php
     //en cas d'erreur
 
