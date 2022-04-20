@@ -1,6 +1,9 @@
 <?php
 session_start();
+require_once 'config.php';
+$maisonRepo = new MaisonRepository($config);
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -32,13 +35,48 @@ session_start();
 
         <div class="panel">
             <div class="panel-title">
-                <h1>Acceuil</h1>
-                <h3>Compte: <?php echo $_SESSION["username"] ?></h3>
+                <h1>accueil</h1>
             </div>
 
             <div class="panel-body">
                 <P>Dans cette page vous pouvez gerer vos immeubles et les associer avec des appareils pour faire une stimation de la consomation par annee</P>
-                
+
+                <table>
+                    <tr>
+                        <th>Addres</th>
+                        <th>Code postal</th>
+                        <th>Consomation projecte par an</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <?php
+                    $maisons = $maisonRepo->selectAll();
+                    foreach ($maisons as $maison)
+                    {
+                    ?>
+
+                        <tr>
+                            <td><?= $maison->getAddress() ?></td>
+                            <td><?= $maison->getCodePostal() ?></td>
+                            <td>TO DO</td>
+                            <td class="td-center">
+                                <form name="editerMaisson" action="account.php" method="post">
+                                    <input type="hidden" name="id" value="<?= $maison->getId() ?>">
+                                    <input type="submit" name="boutonEditerMaison" value="Editer">
+                                </form>
+                            </td>
+                            <td class="td-center">
+                                <form name="supprimerMaison" action="account.php" method="post">
+                                    <input type="hidden" name="id" value="<?= $maison->getId() ?>">
+                                    <input type="submit" name="boutonSupprimer" value="Supprimer">
+                                </form>
+                            </td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+
+                </table>
             </div>
         </div>
     </div>

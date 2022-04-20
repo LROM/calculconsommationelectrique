@@ -37,7 +37,7 @@ class UtilisateurRepository extends ModelRepository
      * @param string $id L'identifant unique de l'utilisateur à sélectionner.
      * @return Utilisateur L'utilisateur si trouvé, sinon null.
      */
-    public function selectPassword($username): string
+    public function selectUtilisateur($username): ?Utilisateur
     {
         $password = "";
         $requete = $this->connexion->prepare("SELECT * FROM utilisateur WHERE username=:username");
@@ -48,10 +48,9 @@ class UtilisateurRepository extends ModelRepository
         if ($record = $requete->fetch())
         {
             $utilisateur = $this->constructUtilisateurFromRecord($record);
-            $password = $utilisateur->getPassword();
         }
 
-        return $password;
+        return $utilisateur;
     }
 
     /**
