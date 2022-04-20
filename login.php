@@ -36,7 +36,8 @@ session_destroy();
 
             if (isset($username) && isset($password))
             {
-                $password_db = $utilisateurRepo->selectPassword($username);
+                $utilisateur = $utilisateurRepo->selectUtilisateur($username);
+                $password_db = $utilisateur->getPassword();
                 if ($password_db != $password)
                 {
                     $erreurs[] = "error en login";
@@ -45,6 +46,7 @@ session_destroy();
                 {
                     session_start();
                     $_SESSION["username"] = $username;
+                    $_SESSION["id"] = $utilisateur->getId();
                     header("Location: account.php");
                 }
             }
