@@ -9,7 +9,8 @@ create table if not exists utilisateur (
 	id bigint auto_increment primary key,
 	username varchar(128) charset utf8,
 	courriel varchar(128) charset utf8,
-	password varchar(128) charset utf8
+	password varchar(128) charset utf8,
+	CONSTRAINT username_unique UNIQUE (username)
 ) engine=InnoDB default charset latin1;
 
 
