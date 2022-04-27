@@ -4,9 +4,9 @@ class Appareil
 {
     private int $id;
     private string $name;
-    private int $kilowatts_heure;
+    private float $kilowatts_heure;
 
-    public function __construct(string $name, int $kilowatts_heure,int $id = 0)
+    public function __construct(string $name, float $kilowatts_heure,int $id = 0)
     {
         $this->setId($id);
         $this->setName($name);
@@ -52,7 +52,7 @@ class Appareil
         /**
          * Get the value of kilowatts_heure
          */
-        public function getKilowattsHeure(): int
+        public function getKilowattsHeure(): float
         {
                 return $this->kilowatts_heure;
         }

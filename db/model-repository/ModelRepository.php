@@ -11,7 +11,7 @@ abstract class ModelRepository
 {
     protected ModelRepositoryConfig $config;
     protected ?PDO $connexion; // le ? permet de mettre à NULL la variable.
-
+    protected int $age = 2;
     /**
      * @param ModelRepositoryConfig $config La configuration pour se connecter à la BD
      * 

@@ -86,6 +86,7 @@ class UtilisateurRepository extends ModelRepository
         $requete->bindValue(":username", $utilisateur->getUsername());
         $requete->bindValue(":courriel", $utilisateur->getCourriel());
         $requete->bindValue(":password", $utilisateur->getPassword());
+        $requete->bindValue(":id", $utilisateur->getId());
         $requete->execute();
         $succes = $requete->rowCount() != 0;
         $this->connexion->commit();

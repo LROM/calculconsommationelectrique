@@ -92,6 +92,7 @@ class MaisonRepository extends ModelRepository
     public function selectAllUtilisateurId($utilisaeur_id): array
     {
         $requete = $this->connexion->prepare("SELECT * FROM maison WHERE utilisateur_id=:utilisateur_id");
+        $requete->bindValue(":utilisateur_id", $utilisaeur_id);
         $requete->execute();
 
         $maisons = array();
@@ -104,5 +105,6 @@ class MaisonRepository extends ModelRepository
 
         return $maisons;
     }
-    
+
+
 }
