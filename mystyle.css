@@ -294,3 +294,6 @@ table {
     font-weight: bold;
 
 }
+label{
+    float: left;
+}
