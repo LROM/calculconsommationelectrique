@@ -45,12 +45,11 @@ $maisonRepo = new MaisonRepository($config);
                     <tr>
                         <th>Addres</th>
                         <th>Code postal</th>
-                        <th>Consomation projecte par an</th>
                         <th></th>
                         <th></th>
                     </tr>
                     <?php
-                    $maisons = $maisonRepo->selectAll();
+                    $maisons = $maisonRepo->selectAllUtilisateurId($_SESSION["id"]);
                     foreach ($maisons as $maison)
                     {
                     ?>
@@ -58,9 +57,8 @@ $maisonRepo = new MaisonRepository($config);
                         <tr>
                             <td><?= $maison->getAddress() ?></td>
                             <td><?= $maison->getCodePostal() ?></td>
-                            <td>TO DO</td>
                             <td class="td-center">
-                                <form name="editerMaisson" action="account.php" method="post">
+                                <form name="editerMaisson" action="configurationmaison.php" method="post">
                                     <input type="hidden" name="id" value="<?= $maison->getId() ?>">
                                     <input type="submit" name="boutonEditerMaison" value="Editer">
                                 </form>
